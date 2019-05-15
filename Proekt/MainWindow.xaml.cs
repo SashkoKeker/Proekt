@@ -35,7 +35,7 @@ namespace Proekt
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            User u = new User(Email.Text, Pass.Text); 
+            User u = new User(Login.Text, Pass.Text); 
         }
     }
 }
