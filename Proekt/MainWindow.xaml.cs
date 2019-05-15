@@ -27,15 +27,18 @@ namespace Proekt
 
        
 
-        private void Singup_Click(object sender, RoutedEventArgs e)
+       
+        
+
+        private void LoginB_Click(object sender, RoutedEventArgs e)
+        {
+            User u = new User(Login.Text, Pass.Text);
+        }
+
+        private void RegB_Click(object sender, RoutedEventArgs e)
         {
             Registration f = new Registration();
             f.Show();
-        }
-
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            User u = new User(Login.Text, Pass.Text); 
         }
     }
 }

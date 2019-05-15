@@ -11,26 +11,28 @@ namespace Proekt
 {
     class User
     {
-
+        public string Login;
         public string Name;
         public string Surname;
         public string Password;
         public string Email;
+        public bool Root;
         Main m = new Main();
 
-        public User(string name, string password)
+        public User(string login, string password)
         {
-            Name = name;
+            Login = login;
             Password = password;
             Log();
         }
-        public User(string name, string surname, string password , string email)
+        public User(string login, string name, string surname, string password , string email, bool root )
         {
+            Login = login;
             Name = name;
             Surname = surname;
             Password = password;
             Email = email;
-
+            Root = root;
             Reg();
 
         }
@@ -39,9 +41,9 @@ namespace Proekt
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conect))
             {
-                string q = "INSERT into [User]([Name], [Surname], [Password], [Email]) VALUES ('" + Name + "','" + Surname + "','" + Password + "','" + Email + "')";
+                string q = "INSERT into [User]([Login], [Name], [Surname], [Password], [Email],[admin]) VALUES ('" + Login + "','" + Name + "','" + Surname + "','" + Password + "','" + Email + "','" + Root + "')";
                 connection.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("Select Count (*) From [User] where [Name] = '" + Name + "'", connection);
+                SqlDataAdapter sda = new SqlDataAdapter("Select Count (*) From [User] where [Name] = '" + Login + "'", connection);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "0")
@@ -69,13 +71,15 @@ namespace Proekt
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conect))
             {
                 connection.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("Select Count (*) From [User] where [Name] = '" + Name + "' and [Password] = '" + Password + "'", connection);
+                SqlDataAdapter sda = new SqlDataAdapter("Select Count (*) From [User] where [Login] = '" + Login + "' and [Password] = '" + Password + "'", connection);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
                     MessageBox.Show("Welcome, Sir");
                     m.Show();
+                    MainWindow q = new MainWindow();
+                    q.Hide();
 
                 }
                 else

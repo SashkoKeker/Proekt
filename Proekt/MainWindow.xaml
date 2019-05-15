@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        xmlns:local="clr-namespace:Hotel_Armani2" 
+        xmlns:local="clr-namespace:Proekt" 
         mc:Ignorable="d" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"    
         Title="Window3" Height="450" Width="350">
@@ -42,8 +42,8 @@
 
         <TextBox x:Name="Login"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Text="Login" VerticalAlignment="Bottom" FontSize="40" Margin="10,0,0,0" Background="#33FAFFFF" Foreground="Black"/>
         <TextBox x:Name="Pass"  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Text="Password"  VerticalAlignment="Bottom" FontSize="40" Margin="10,0,0,0" Background="#33FAFFFF" Foreground="Black"/>
-        <Button x:Name="LoginB"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Height="38" Margin="10,5,0,0" Content="Login" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#9900D1FF" Loaded="LoginB_Loaded" />
-        <Button x:Name="RegB"  Grid.Row="4" Height="38" Grid.Column="0" Grid.ColumnSpan="4" Margin="10,-25,0,0" Content="Registration" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#AAFAFFFF" />
+        <Button x:Name="LoginB"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Height="38" Margin="10,5,0,0" Content="Login" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#9900D1FF"  Click="LoginB_Click" />
+        <Button x:Name="RegB"  Grid.Row="4" Height="38" Grid.Column="0" Grid.ColumnSpan="4" Margin="10,-25,0,0" Content="Registration" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#AAFAFFFF" Click="RegB_Click" />
 
         <Grid Grid.Column="6" Grid.Row="4" Grid.RowSpan="2" Background="#9900D1FF"/>
         <Viewbox Grid.Column="6" Grid.Row="4">
