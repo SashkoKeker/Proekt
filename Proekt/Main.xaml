@@ -5,23 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proekt"
         mc:Ignorable="d"
-        Title="Main" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"></RowDefinition>
-            <RowDefinition Height="0.5*"></RowDefinition>
-            <RowDefinition Height="0.5*"></RowDefinition>
-            <RowDefinition Height="0.3*"></RowDefinition>
-            <RowDefinition Height="0.5*"></RowDefinition>
-            <RowDefinition Height="0.5*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="1.4*"></ColumnDefinition>
+        Title="Main" Height="450" Width="900" Loaded="Window_Loaded">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+
         </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                
+
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" OpacityMask="Black">
+                <TextBlock x:Name="UserLog" FontFamily="Impact" FontWeight="Light" Foreground="Black" Text="UserLog:" />
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" OpacityMask="Black">
+            <TextBlock x:Name="Title" FontFamily="Impact" FontWeight="Light" Foreground="Black" />
+        </Viewbox>
+            <Viewbox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" OpacityMask="Black">
+                <TextBlock x:Name="UserId" FontFamily="Impact" FontWeight="Light" Foreground="Black" Text="UserId:" />
+            </Viewbox>
+        <Viewbox Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="1" OpacityMask="Black">
+            <TextBlock x:Name="Idd" FontFamily="Impact" FontWeight="Light" Foreground="Black" />
+        </Viewbox>
+            
+        </Grid>
+        <Button x:Name="LoginB"  
+                Grid.Row="0" 
+                Grid.Column="4" 
+                
+                Height="38" 
+                Margin="10,5,0,0" 
+                Content="Login" 
+                FontSize="22" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Background="#9900D1FF" Click="LoginB_Click" 
+                />
+        
+        <ScrollViewer x:Name="sasaq" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="4">
+            <UniformGrid x:Name="Gridd" Rows="15" Columns="1">
+
+            </UniformGrid>
+        </ScrollViewer>
     </Grid>
-</Window>
+    </Window>

@@ -11,6 +11,7 @@ namespace Proekt
 {
     class User
     {
+        public string Id;
         public string Login;
         public string Name;
         public string Surname;
@@ -24,8 +25,9 @@ namespace Proekt
             Login = login;
             Password = password;
             Log();
+            
         }
-        public User(string login, string name, string surname, string password , string email, bool root )
+        public User(string login, string name, string surname, string password, string email, bool root)
         {
             Login = login;
             Name = name;
@@ -34,6 +36,7 @@ namespace Proekt
             Email = email;
             Root = root;
             Reg();
+           
 
         }
 
@@ -58,12 +61,12 @@ namespace Proekt
                 }
                 else
                     MessageBox.Show("This login zanyat, Sir. Sorry((9(");
-               // SqlCommand command = new SqlCommand(q, connection);
+                // SqlCommand command = new SqlCommand(q, connection);
                 //command.ExecuteNonQuery();
                 //MessageBox.Show("Stvoreno and Dodano v DB");
                 connection.Close();
             }
-           
+
         }
 
         public void Log()
@@ -76,8 +79,13 @@ namespace Proekt
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
+
                     MessageBox.Show("Welcome, Sir");
+                    m.Title.Text = Login;
+                    getid();
+                    m.Idd.Text = Id;
                     m.Show();
+
                     MainWindow q = new MainWindow();
                     q.Hide();
 
@@ -88,6 +96,20 @@ namespace Proekt
                 }
             }
         }
+        public void getid()
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conect))
+            {
+                connection.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("Select [Id] From [User] where [Login] = '" + Login + "'", connection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                MessageBox.Show(dt.Rows[0][0].ToString());
+                Id =  dt.Rows[0][0].ToString();
+                connection.Close();
+            }
+        }
+        
     }
 }
 
