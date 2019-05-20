@@ -40,8 +40,8 @@
             <materialDesign:PackIcon x:Name="M3" Kind="Language" Foreground="Black" VerticalAlignment="Center" BorderThickness="1,0,0,1" BorderBrush="#AAEEEEEE"/>
         </Viewbox>
 
-        <TextBox x:Name="Login"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Text="Login" VerticalAlignment="Bottom" FontSize="40" Margin="10,0,0,0" Background="#33FAFFFF" Foreground="Black"/>
-        <TextBox x:Name="Pass"  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Text="Password"  VerticalAlignment="Bottom" FontSize="40" Margin="10,0,0,0" Background="#33FAFFFF" Foreground="Black"/>
+        <TextBox x:Name="Login"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Text="Login" VerticalAlignment="Bottom" FontSize="40" Margin="10,0,0,0" Background="#33FAFFFF" Foreground="White"/>
+        <TextBox x:Name="Pass"  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Text="Password"  VerticalAlignment="Bottom" FontSize="40" Margin="10,0,0,0" Background="#33FAFFFF" Foreground="White"/>
         <Button x:Name="LoginB"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Height="38" Margin="10,5,0,0" Content="Login" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#9900D1FF"  Click="LoginB_Click" />
         <Button x:Name="RegB"  Grid.Row="4" Height="38" Grid.Column="0" Grid.ColumnSpan="4" Margin="10,-25,0,0" Content="Registration" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#AAFAFFFF" Click="RegB_Click" />
 

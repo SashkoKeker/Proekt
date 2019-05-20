@@ -28,8 +28,11 @@ namespace Proekt
         
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            Date.Text = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
-            //Ogolosh o = new Ogolosh(Convert.ToInt32(m.Idd.Text),m.Name.Text);
+            Date.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            
+           
+            Ogolosh o = new Ogolosh(IdUser.Text ,Name.Text, Zmist.Text, Date.Text, Tip.IsChecked.Value);
                 
         }
 

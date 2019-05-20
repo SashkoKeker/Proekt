@@ -42,7 +42,7 @@ namespace Proekt
 
         void Reg()
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conect))
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conects))
             {
                 string q = "INSERT into [User]([Login], [Name], [Surname], [Password], [Email],[admin]) VALUES ('" + Login + "','" + Name + "','" + Surname + "','" + Password + "','" + Email + "','" + Root + "')";
                 connection.Open();
@@ -71,7 +71,7 @@ namespace Proekt
 
         public void Log()
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conect))
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conects))
             {
                 connection.Open();
                 SqlDataAdapter sda = new SqlDataAdapter("Select Count (*) From [User] where [Login] = '" + Login + "' and [Password] = '" + Password + "'", connection);
@@ -82,11 +82,12 @@ namespace Proekt
 
                     MessageBox.Show("Welcome, Sir");
                     m.Title.Text = Login;
-                    getid();
+                    Getid();
                     m.Idd.Text = Id;
                     m.Show();
 
                     MainWindow q = new MainWindow();
+                    
                     q.Hide();
 
                 }
@@ -96,9 +97,9 @@ namespace Proekt
                 }
             }
         }
-        public void getid()
+        public void Getid()
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conect))
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conects))
             {
                 connection.Open();
                 SqlDataAdapter sda = new SqlDataAdapter("Select [Id] From [User] where [Login] = '" + Login + "'", connection);

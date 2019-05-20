@@ -25,14 +25,14 @@ namespace Proekt
             InitializeComponent();
         }
 
-       
 
-       
+
+         
         
 
         private void LoginB_Click(object sender, RoutedEventArgs e)
         {
-            User u = new User(Login.Text, Pass.Text);
+         User u = new User(Login.Text, Pass.Text);
         }
 
         private void RegB_Click(object sender, RoutedEventArgs e)
