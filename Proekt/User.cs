@@ -26,6 +26,7 @@ namespace Proekt
             Password = password;
             Log();
             
+            
         }
         public User(string login, string name, string surname, string password, string email, bool root)
         {
@@ -71,21 +72,25 @@ namespace Proekt
 
         public void Log()
         {
+            
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conects))
             {
+                
                 connection.Open();
                 SqlDataAdapter sda = new SqlDataAdapter("Select Count (*) From [User] where [Login] = '" + Login + "' and [Password] = '" + Password + "'", connection);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
-
+                    Getid();
                     MessageBox.Show("Welcome, Sir");
                     m.Title.Text = Login;
                     Getid();
                     m.Idd.Text = Id;
                     m.Surname.Text = Surname;
                     m.Email.Text = Email;
+                    if (Root == true)
+                        m.adm.Visibility = Visibility.Visible;
                     m.Show();
 
                     MainWindow q = new MainWindow();
@@ -104,11 +109,16 @@ namespace Proekt
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conects))
             {
                 connection.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("Select [Id] From [User] where [Login] = '" + Login + "'", connection);
+                SqlDataAdapter sda = new SqlDataAdapter("Select [Id],[Name],[Surname],[Password],[Email],[admin] From [User] where [Login] = '" + Login + "'", connection);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 MessageBox.Show(dt.Rows[0][0].ToString());
                 Id =  dt.Rows[0][0].ToString();
+                Name = dt.Rows[0][1].ToString();
+                Surname = dt.Rows[0][2].ToString();
+                Password = dt.Rows[0][3].ToString();
+                Email = dt.Rows[0][4].ToString();
+                Root = Boolean.Parse(dt.Rows[0][5].ToString());
                 connection.Close();
             }
         }

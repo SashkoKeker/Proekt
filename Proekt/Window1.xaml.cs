@@ -36,6 +36,14 @@ namespace Proekt
                 
         }
 
-        
+        private void Tip_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Singup_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

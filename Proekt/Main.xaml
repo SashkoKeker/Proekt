@@ -80,6 +80,24 @@
                        Foreground="Black" />
             </Viewbox>
 
+            <Viewbox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" OpacityMask="Black">
+                <Button x:Name="adm"  
+                Grid.Row="0" 
+                Grid.Column="4"               
+                Height="38" 
+                Margin="5,0,5,0" 
+                Content="For admin" 
+                FontSize="22" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Background="#9900D1FF" 
+                RenderTransformOrigin="0.502,0.5" Click="Adm_Click" Visibility="Hidden"
+                    
+                    >
+                    
+                </Button>
+            </Viewbox>
+
         </Grid>
         <Button 
             x:Name="Create"  
@@ -120,11 +138,9 @@
                 Background="#9900D1FF" Click="Myadvertisement_Click" 
                  
                 />
-
-        <ScrollViewer x:Name="sasaq" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="4">
-            <UniformGrid x:Name="Gridd" Rows="15" Columns="1">
-
-            </UniformGrid>
-        </ScrollViewer>
+        <DataGrid x:Name="DG" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="4">
+            
+        </DataGrid>
+        
     </Grid>
 </Window>

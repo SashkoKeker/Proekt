@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,71 +28,18 @@ namespace Proekt
         {
             InitializeComponent();
         }
-
+        private static SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conect);
+        static string q = "SELECT [Name],[Zmist],[Date] FROM [Ogol] ORDER BY Date DESC";
+        public static SqlCommand comand = new SqlCommand(q, connection);
+        static public SqlDataAdapter sda = new SqlDataAdapter(comand);
+        private static DataTable dt = new DataTable("Ogol");
         public string anton;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             
-          List<Ogolosh> l = new List<Ogolosh>();
-            Ogolosh og = new Ogolosh();
-           
-            for (int i = 0; i < og.count; i++)
-            {
-                l.Add(new Ogolosh(i));
-            }
+            sda.Fill(dt);
+            DG.ItemsSource = dt.DefaultView;
 
-            foreach (Ogolosh ogol in l)
-            {
-                StackPanel SP = new StackPanel
-                {
-                    Orientation = Orientation.Horizontal,
-                    Background = Brushes.Black
-
-                };
-                
-
-                Gridd.Children.Add(SP);
-                TextBlock Tb1 = new TextBlock
-                {
-                    VerticalAlignment = VerticalAlignment.Bottom,
-                    Background = new SolidColorBrush(Color.FromArgb(0x33, 0xFA, 0xFF, 0xFF)),
-                    //"33FAFFFF"
-                    Foreground = Brushes.White
-                };
-                /*Thickness margin = Tb1.Margin;
-                margin.Top = 10;
-                Tb1.Margin = margin;*/
-                TextBlock Tb2 = new TextBlock
-                {
-                    VerticalAlignment = VerticalAlignment.Bottom,
-                    Background = new SolidColorBrush(Color.FromArgb(0x33, 0xFA, 0xFF, 0xFF)),
-                   //"33FAFFFF"
-                   Foreground = Brushes.White
-                };
-                     
-                    
-                TextBlock Tb3 = new TextBlock
-                {
-                    VerticalAlignment = VerticalAlignment.Bottom,
-                    Background = new SolidColorBrush(Color.FromArgb(0x33, 0xFA, 0xFF, 0xFF)),
-                    //"33FAFFFF"
-                    Foreground = Brushes.White
-                };
-                Tb1.Width = 110;
-                //Tb1.IsEnabled =  false;
-                SP.Children.Add(Tb1);
-                Tb1.Text = "Name: "+ ogol.IdUser;
-                Tb2.Text = "Date: " + ogol.Date;
-                Tb3.Text = ogol.Zmist;
-                SP.Children.Add(Tb2);
-                SP.Children.Add(Tb3);
-
-            }
-            
-                //  b.Click.Button_Click(sender, e);
-                // MessageBox.Show(Convert.ToString(bidder.bid), bidder.Name);
-
-           
         }
 
         private void Create_Click(object sender, RoutedEventArgs e)
@@ -102,17 +51,23 @@ namespace Proekt
         }
 
         private void Advertisement_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            Main m = new Main();
-            m.Show();
+        {   DataTable t = new DataTable();           
+            sda.Fill(dt);
+            DG.ItemsSource = dt.DefaultView;
         }
 
         private void Myadvertisement_Click(object sender, RoutedEventArgs e)
         {
+            
             Window2 w = new Window2();
             w.id.Text = Idd.Text;
             w.Show();
+        }
+
+        private void Adm_Click(object sender, RoutedEventArgs e)
+        {
+            ForAdmin ad = new ForAdmin();
+            ad.Show();
         }
     }
 }
