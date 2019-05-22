@@ -28,25 +28,25 @@
         </Grid.ColumnDefinitions>
 
         <Viewbox Grid.Column="2" Grid.Row="6">
-            <Button x:Name="Login"  Content="   Login   " Click="Login_Click"/>
+            <Button x:Name="Singup"  Content="   Singup   " Click="Login_Click"/>
         </Viewbox>
         <Viewbox Grid.Column="3" Grid.Row="6">
-            <Button x:Name="Singup" Content="Singup" />
+            <Button x:Name="Back" Content="     Back    " Click="Back_Click" />
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" Margin="10">
-            <TextBox x:Name="Log" Text="Login"/>
+            <TextBox x:Name="Log" Text="   Login  "/>
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
-            <TextBox x:Name="Name" Text="Name"/>
+            <TextBox x:Name="Name" Text="  Name  "/>
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="10">
-            <TextBox x:Name="Surname" Text="Surname"/>
+            <TextBox x:Name="Surname" Text=" Surname"/>
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Margin="10">
             <TextBox x:Name="Pass" Text="Password"/>
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Margin="10">
-            <TextBox x:Name="Email" Text="Email"/>
+            <TextBox x:Name="Email" Text="   Email    "/>
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="10">
             <RadioButton Name="adm" Content="Admin" ></RadioButton>

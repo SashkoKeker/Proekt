@@ -9,7 +9,6 @@ namespace Proekt
 {
     class Relize
     {
-        SqlDataReader reader = null;
        
     }
 }

@@ -19,11 +19,8 @@ namespace Proekt
     /// </summary>
     public partial class Main : Window
     {
-
-        public double Move;
-        public double chek;
-
-        public bool ch = true;
+        public MainWindow qq = new MainWindow();
+        
 
         public Main()
         {
@@ -33,7 +30,7 @@ namespace Proekt
         public string anton;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            
           List<Ogolosh> l = new List<Ogolosh>();
             Ogolosh og = new Ogolosh();
            
@@ -46,24 +43,39 @@ namespace Proekt
             {
                 StackPanel SP = new StackPanel
                 {
-                    Orientation = Orientation.Horizontal
+                    Orientation = Orientation.Horizontal,
+                    Background = Brushes.Black
+
                 };
                 
+
                 Gridd.Children.Add(SP);
-                TextBox Tb1 = new TextBox
+                TextBlock Tb1 = new TextBlock
                 {
                     VerticalAlignment = VerticalAlignment.Bottom,
-                   
-                    Text = "Name: " + ogol.IdUser,
-                    Background = new SolidColorBrush(Color.FromArgb(0x33, 0xFA, 0xFF, 0xFF)), 
+                    Background = new SolidColorBrush(Color.FromArgb(0x33, 0xFA, 0xFF, 0xFF)),
                     //"33FAFFFF"
-                   Foreground = Brushes.Black
+                    Foreground = Brushes.White
                 };
-                Thickness margin = Tb1.Margin;
+                /*Thickness margin = Tb1.Margin;
                 margin.Top = 10;
-                Tb1.Margin = margin;
-                TextBox Tb2 = new TextBox();
-                TextBlock Tb3 = new TextBlock();
+                Tb1.Margin = margin;*/
+                TextBlock Tb2 = new TextBlock
+                {
+                    VerticalAlignment = VerticalAlignment.Bottom,
+                    Background = new SolidColorBrush(Color.FromArgb(0x33, 0xFA, 0xFF, 0xFF)),
+                   //"33FAFFFF"
+                   Foreground = Brushes.White
+                };
+                     
+                    
+                TextBlock Tb3 = new TextBlock
+                {
+                    VerticalAlignment = VerticalAlignment.Bottom,
+                    Background = new SolidColorBrush(Color.FromArgb(0x33, 0xFA, 0xFF, 0xFF)),
+                    //"33FAFFFF"
+                    Foreground = Brushes.White
+                };
                 Tb1.Width = 110;
                 //Tb1.IsEnabled =  false;
                 SP.Children.Add(Tb1);
@@ -74,19 +86,33 @@ namespace Proekt
                 SP.Children.Add(Tb3);
 
             }
-
+            
                 //  b.Click.Button_Click(sender, e);
                 // MessageBox.Show(Convert.ToString(bidder.bid), bidder.Name);
 
            
         }
 
-        private void LoginB_Click(object sender, RoutedEventArgs e)
+        private void Create_Click(object sender, RoutedEventArgs e)
         {
             
             Window1 q = new Window1();
             q.IdUser.Text = Idd.Text;
             q.Show();
+        }
+
+        private void Advertisement_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Main m = new Main();
+            m.Show();
+        }
+
+        private void Myadvertisement_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 w = new Window2();
+            w.id.Text = Idd.Text;
+            w.Show();
         }
     }
 }

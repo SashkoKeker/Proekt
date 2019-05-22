@@ -35,7 +35,7 @@ namespace Proekt
             {
 
                 
-                string q = "Select * from [Ogol]";
+                string q = "SELECT * FROM Ogol ORDER BY Date DESC";
                 connection.Open();
                 
                 SqlDataAdapter sda = new SqlDataAdapter(q, connection);
@@ -112,7 +112,7 @@ namespace Proekt
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Conect))
             {
 
-                int a = 1;
+                
                 string q = "set language english  INSERT into [Ogol]([iduser], [Name], [Zmist], [Date], [Tip]) VALUES ('" + IdUser + "','" + Name + "','" + Zmist + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + Tip + "')";
                 connection.Open();
 

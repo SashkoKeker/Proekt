@@ -20,6 +20,8 @@ namespace Proekt
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        User u;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,7 +34,7 @@ namespace Proekt
 
         private void LoginB_Click(object sender, RoutedEventArgs e)
         {
-         User u = new User(Login.Text, Pass.Text);
+            u = new User(Login.Text, Pass.Text);
         }
 
         private void RegB_Click(object sender, RoutedEventArgs e)

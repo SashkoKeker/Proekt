@@ -84,6 +84,8 @@ namespace Proekt
                     m.Title.Text = Login;
                     Getid();
                     m.Idd.Text = Id;
+                    m.Surname.Text = Surname;
+                    m.Email.Text = Email;
                     m.Show();
 
                     MainWindow q = new MainWindow();

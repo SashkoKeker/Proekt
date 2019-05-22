@@ -27,6 +27,12 @@ namespace Proekt
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             User us = new User(Log.Text, Name.Text, Surname.Text, Pass.Text, Email.Text, adm.IsChecked.Value );
+            Close();
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
